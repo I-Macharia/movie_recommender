@@ -1,0 +1,4 @@
+.similarity(2).pkl
+cosine_sim2.pkl
+Movie_dict.pkl
+tmdb_5000_credits.csv
