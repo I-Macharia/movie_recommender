@@ -3,6 +3,7 @@ import requests
 import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import zipfile
 
 
 def fetch_poster(movie_id):
@@ -53,9 +54,13 @@ def hybrid_recommendations(title, cosine_sim2, movies_credits):
 
 st.header('Movie Recommender System')
 
+# unzip the archive.zip file
+with zipfile.ZipFile('tmdb_5000_credits.zip', 'r') as zip_ref:
+  zip_ref.extractall('extracted_files')
+
 # Load and merge the TMDB movies.csv and TMDB credits.csv
 tmdb_movies = pd.read_csv(r"tmdb_5000_movies.csv")
-tmdb_credits = pd.read_csv(r"tmdb_5000_credits.csv")
+tmdb_credits = pd.read_csv(r"extracted_files/tmdb_5000_credits.csv")
 
 # Drop the Title column in Movies Dataset
 tmdb_movies.drop(['title'], axis=1, inplace=True)
