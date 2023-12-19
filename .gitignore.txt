@@ -1,4 +1,4 @@
-extracted_files/.similarity(2).pkl
-extracted_files/.cosine_sim2.pkl
+.similarity(2).pkl
+.cosine_sim2.pkl
 Movie_dict.pkl
-extracted_files/.tmdb_5000_credits.csv
+.tmdb_5000_credits.csv
