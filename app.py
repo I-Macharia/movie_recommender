@@ -3,7 +3,7 @@ import requests
 import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+import zipfile
 
 def fetch_poster(movie_id):
     api_key = "53607277a4abba625e13562a61ea99d5"
@@ -66,7 +66,7 @@ with zipfile.ZipFile('tmdb_5000_credits.zip', 'r') as zip_ref:
 
 # Load and merge the TMDB movies.csv and TMDB credits.csv
 tmdb_movies = pd.read_csv(r"tmdb_5000_movies.csv")
-tmdb_credits = pd.read_csv(r"tmdb_5000_credits.csv")
+tmdb_credits = pd.read_csv(r"extracted_files/tmdb_5000_credits.csv")
 
 # Drop the Title column in Movies Dataset
 tmdb_movies.drop(['title'], axis=1, inplace=True)
