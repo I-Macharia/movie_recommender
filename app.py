@@ -4,6 +4,7 @@ import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import zipfile
+import os
 
 def fetch_poster(movie_id):
     api_key = "53607277a4abba625e13562a61ea99d5"
@@ -15,7 +16,9 @@ def fetch_poster(movie_id):
 
 # Function to save feedback to a text file
 def save_feedback(name, email, phone, feedback_text):
-    feedback_file_path = "feedback.txt"
+    # Get the absolute path to the directory where the script is located
+    script_directory = os.path.dirname(os.path.realpath(__file__))
+    feedback_file_path = os.path.join(script_directory, "feedback.txt")
     with open(feedback_file_path, "a", encoding="utf-8") as feedback_file:
         # Write feedback information with clear distinctions
         feedback_file.write(f"Feedback: {feedback_text}\n")
