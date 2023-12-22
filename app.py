@@ -60,7 +60,9 @@ def hybrid_recommendations(title, cosine_sim2, movies_credits):
     }).set_index('index').sort_values(by='vote_average', ascending=False)
 
 
-
+# unzip the archive.zip file
+with zipfile.ZipFile('tmdb_5000_credits.zip', 'r') as zip_ref:
+  zip_ref.extractall('extracted_files')
 
 # Load and merge the TMDB movies.csv and TMDB credits.csv
 tmdb_movies = pd.read_csv(r"tmdb_5000_movies.csv")
