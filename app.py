@@ -17,8 +17,7 @@ def fetch_poster(movie_id):
 # Function to save feedback to a text file
 def save_feedback(name, email, phone, feedback_text):
     # Get the absolute path to the directory where the script is located
-    script_directory = os.path.dirname(os.path.realpath(__file__))
-    feedback_file_path = os.path.join(script_directory, "feedback.txt")
+    feedback_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "feedback.txt")
     with open(feedback_file_path, "a", encoding="utf-8") as feedback_file:
         # Write feedback information with clear distinctions
         feedback_file.write(f"Feedback: {feedback_text}\n")
