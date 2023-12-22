@@ -15,7 +15,7 @@ def fetch_poster(movie_id):
 
 # Function to save feedback to a text file
 def save_feedback(name, email, phone, feedback_text):
-    feedback_file_path = "feedback.txt"
+    feedback_file_path = r"feedback.txt"
     with open(feedback_file_path, "a", encoding="utf-8") as feedback_file:
         # Write feedback information with clear distinctions
         feedback_file.write(f"Feedback: {feedback_text}\n")
@@ -140,16 +140,13 @@ def main():  # sourcery skip: extract-duplicate-method, extract-method
             with st.sidebar.expander(""):
                 pass
             # Add header
-            st.header('Movie Recommender System')
+            movie_list = movies_credits['title'].values
             selected_movie = st.selectbox(
-        "Type or select a movie from the dropdown",
-        movie_list
-    )
-            recommended_movies = hybrid_recommendations(selected_movie, cosine_sim2, movies_credits)
-
+            "Type or select a movie from the dropdown",
+            movie_list
+                    )
             if st.button('Show Recommendation'):
-
-
+                recommended_movies = hybrid_recommendations(selected_movie, cosine_sim2, movies_credits)
                 columns = st.columns(5)
                 displayed_titles = []
                 for _, movie in recommended_movies.iterrows():
@@ -159,7 +156,7 @@ def main():  # sourcery skip: extract-duplicate-method, extract-method
                     with columns[0]:
                         st.text(title)
                         st.image(fetch_poster(movie['id']))
-                    columns = columns[1:] + [columns[0]]
+                        columns = columns[1:] + [columns[0]]
 
     if selection == "Feedback": 
         with st.sidebar.expander(""):
