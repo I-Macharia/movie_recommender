@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import zipfile
 import os
-import subprocesses
+import subprocess
 
 def fetch_poster(movie_id):
     api_key = "53607277a4abba625e13562a61ea99d5"
