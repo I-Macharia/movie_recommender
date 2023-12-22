@@ -135,9 +135,8 @@ def main():  # sourcery skip: extract-duplicate-method, extract-method
 
         st.markdown("&copy; 2023 Movie Recommender. All rights reserved.")
 
-
-        if selection == "Movies" : 
-            with st.sidebar.expander(""):
+    if selection == "Movies" : 
+        with st.sidebar.expander(""):
                 pass
             # Add header
             movie_list = movies_credits['title'].values
@@ -157,6 +156,7 @@ def main():  # sourcery skip: extract-duplicate-method, extract-method
                         st.text(title)
                         st.image(fetch_poster(movie['id']))
                         columns = columns[1:] + [columns[0]]
+
 
     if selection == "Feedback": 
         with st.sidebar.expander(""):
