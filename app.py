@@ -157,12 +157,7 @@ def main():
                     st.success("Feedback submitted successfully!")
                 else:
                     st.warning("Please enter your feedback before submitting.")
-        # Add and commit changes using Git
-        subprocess.run(["git", "add", "."])
-        subprocess.run(["git", "commit", "-m", "Add new data"])
-
-        # Push changes to the remote repository
-        subprocess.run(["git", "push", "origin", "main"])
+       
 
         st.write("""
             We value your feedback! Please share your thoughts, suggestions, or any issues you encountered while using Movie Recommender. Your feedback helps us enhance the user experience and improve our services.
