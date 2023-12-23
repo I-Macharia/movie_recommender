@@ -107,15 +107,15 @@ def main():
         st.write("""
             The Movie Recommender utilizes a sophisticated algorithm that analyzes your selected movie title and considers various factors such as genre, director, cast, and user ratings. Simply choose a movie from the dropdown list, and our system will generate a list of recommended movies that share similar characteristics or themes.
         """)
-        st.header("Explore and Enjoy")
+        st.subheader("Explore and Enjoy")
         st.write("""
             Whether you're a film enthusiast or just looking for something new to watch, Movie Recommender is here to make your movie-watching experience more enjoyable. Discover hidden gems, explore different genres, and find movies that match your taste.
         """)
-        st.header("Feedback and Support")
+        st.subheader("Feedback and Support")
         st.write("""
             We value your feedback! If you have any suggestions, questions, or issues, feel free to reach out to our support team. Your input helps us improve and enhance the Movie Recommender for everyone.
         """)
-        st.header("Happy Watching!")
+        st.subheader("Happy Watching!")
         st.write("""
             Thank you for choosing Movie Recommender. Sit back, relax, and enjoy the world of cinema with personalized recommendations made just for you.
         """)
