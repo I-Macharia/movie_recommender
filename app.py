@@ -18,7 +18,7 @@ def fetch_poster(movie_id):
 # Function to save feedback to a text file
 def save_feedback(name, email, phone, feedback_text):
     # Get the absolute path to the directory where the script is located
-    feedback_file_path = "feedback.txt"
+    feedback_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "feedback.txt")
     with open(feedback_file_path, "a", encoding="utf-8") as feedback_file:
         # Write feedback information with clear distinctions
         feedback_file.write(f"Feedback: {feedback_text}\n")
@@ -96,35 +96,7 @@ def main():
 
     selection = st.sidebar.selectbox("Select Menu", menu)
     st.sidebar.header("MovieFlix!")
-    # List of image URLs from Pixabay
-    image_urls = [
-                    "https://cdn.pixabay.com/photo/2018/03/17/10/05/wildlife-3233525_640.jpg",
-                    "https://cdn.pixabay.com/photo/2018/01/21/18/54/water-buffalo-3097317_640.jpg",
-                    "https://cdn.pixabay.com/photo/2018/03/03/10/02/architecture-3195322_640.jpg",
-                    "https://cdn.pixabay.com/photo/2017/07/14/04/50/cheetah-2502782_640.jpg",
-                    "https://cdn.pixabay.com/photo/2018/09/17/14/36/lion-3683994_640.jpg",
-                    "https://cdn.pixabay.com/photo/2014/06/20/18/34/ostriches-373339_640.jpg",
-                    "https://cdn.pixabay.com/photo/2016/02/24/06/35/cape-of-good-hope-1219192_640.jpg",
-                    "https://cdn.pixabay.com/photo/2017/05/10/23/10/morocco-2302244_640.jpg",
-                    # Add more image URLs from Pixabay
-                    ]
 
-        # Display the images in the gallery
-    for image_url in image_urls:
-        image_name = os.path.basename(image_url)  # Extract the name from the URL
-        st.image(image_url, caption=image_name, use_column_width=True)
-    # List of movie IDs for which you want to fetch posters
-    movie_ids = [123, 456, 789]  # Replace with actual movie IDs
-
-    # Create a slide show of movie posters
-    st.sidebar.subheader("Movie Poster Slide Show")
-
-    for movie_id in movie_ids:
-    # Fetch the poster for the current movie ID
-        poster_url = fetch_poster(movie_id)
-    
-    # Display the poster in the main section
-    st.sidebar.image(poster_url, caption=f"Movie ID: {movie_id}", use_column_width=True)
 
     if selection == "About":
         st.sidebar.expander("")
