@@ -97,22 +97,22 @@ def main():
     selection = st.sidebar.selectbox("Select Menu", menu)
     st.sidebar.header("MovieFlix!")
     # List of image URLs from Pixabay
-        image_urls = [
-                        "https://cdn.pixabay.com/photo/2018/03/17/10/05/wildlife-3233525_640.jpg",
-                        "https://cdn.pixabay.com/photo/2018/01/21/18/54/water-buffalo-3097317_640.jpg",
-                        "https://cdn.pixabay.com/photo/2018/03/03/10/02/architecture-3195322_640.jpg",
-                        "https://cdn.pixabay.com/photo/2017/07/14/04/50/cheetah-2502782_640.jpg",
-                        "https://cdn.pixabay.com/photo/2018/09/17/14/36/lion-3683994_640.jpg",
-                        "https://cdn.pixabay.com/photo/2014/06/20/18/34/ostriches-373339_640.jpg",
-                        "https://cdn.pixabay.com/photo/2016/02/24/06/35/cape-of-good-hope-1219192_640.jpg",
-                        "https://cdn.pixabay.com/photo/2017/05/10/23/10/morocco-2302244_640.jpg",
-                        # Add more image URLs from Pixabay
-                        ]
+    image_urls = [
+                    "https://cdn.pixabay.com/photo/2018/03/17/10/05/wildlife-3233525_640.jpg",
+                    "https://cdn.pixabay.com/photo/2018/01/21/18/54/water-buffalo-3097317_640.jpg",
+                    "https://cdn.pixabay.com/photo/2018/03/03/10/02/architecture-3195322_640.jpg",
+                    "https://cdn.pixabay.com/photo/2017/07/14/04/50/cheetah-2502782_640.jpg",
+                    "https://cdn.pixabay.com/photo/2018/09/17/14/36/lion-3683994_640.jpg",
+                    "https://cdn.pixabay.com/photo/2014/06/20/18/34/ostriches-373339_640.jpg",
+                    "https://cdn.pixabay.com/photo/2016/02/24/06/35/cape-of-good-hope-1219192_640.jpg",
+                    "https://cdn.pixabay.com/photo/2017/05/10/23/10/morocco-2302244_640.jpg",
+                    # Add more image URLs from Pixabay
+                    ]
 
         # Display the images in the gallery
-        for image_url in image_urls:
-            image_name = os.path.basename(image_url)  # Extract the name from the URL
-            st.sidebar.image(image_url, caption=image_name, use_column_width=True)
+    for image_url in image_urls:
+        image_name = os.path.basename(image_url)  # Extract the name from the URL
+        st.sidebar.image(image_url, caption=image_name, use_column_width=True)
 
     if selection == "About":
         st.sidebar.expander("")
