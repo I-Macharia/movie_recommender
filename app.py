@@ -124,7 +124,7 @@ def main():
         poster_url = fetch_poster(movie_id)
     
     # Display the poster in the main section
-       st.image(poster_url, caption=f"Movie ID: {movie_id}", use_column_width=True)
+    st.sidebar.image(poster_url, caption=f"Movie ID: {movie_id}", use_column_width=True)
 
     if selection == "About":
         st.sidebar.expander("")
