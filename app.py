@@ -112,7 +112,7 @@ def main():
         # Display the images in the gallery
     for image_url in image_urls:
         image_name = os.path.basename(image_url)  # Extract the name from the URL
-        st.sidebar.image(image_url, caption=image_name, use_column_width=True)
+        st.image(image_url, caption=image_name, use_column_width=True)
     # List of movie IDs for which you want to fetch posters
     movie_ids = [123, 456, 789]  # Replace with actual movie IDs
 
