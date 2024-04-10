@@ -120,7 +120,7 @@ def main():
         st.write("""
             Thank you for choosing Movie Recommender. Sit back, relax, and enjoy the world of cinema with personalized recommendations made just for you.
         """)
-        st.markdown("&copy; 2023 Movie Recommender. All rights reserved.")
+        st.markdown("&copy; 2024 Movie Recommender. All rights reserved.")
 
     elif selection == "Movies":
         st.sidebar.expander("")
